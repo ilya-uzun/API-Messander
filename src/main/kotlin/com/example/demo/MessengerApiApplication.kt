@@ -1,11 +1,11 @@
 package com.example.demo
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.runApplication
+import org.springframework.boot.SpringApplication
 
 @SpringBootApplication
-class DemoApplication
+class MessengerApiApplication
 
 fun main(args: Array<String>) {
-	runApplication<DemoApplication>(*args)
+	SpringApplication.run(MessengerApiApplication::class.java, *args)
 }
