@@ -13,25 +13,24 @@ fun  main() {
     bot.registerBot(Bot())
 }
 
-//class Storage(quoteList: ArrayList<String>){
-//    constructor(quoteList: ArrayList<String>){
-//        val quoteList = ArrayList<String>()
-//        quoteList.add("Начинать всегда стоит с того, что сеет сомнения. \n\nБорис Стругацкий.")
-//        quoteList.add("Начинать всегда стоит с того, что сеет сомнения. \n\nБорис Стругацкий.")
-//        quoteList.add("80% успеха - это появиться в нужном месте в нужное время.\n\nВуди Аллен")
-//        quoteList.add("Мы должны признать очевидное: понимают лишь те,кто хочет понять.\n\nБернар Вербер")
-//    }
-//    fun getRandQuote(){
-//        val randValue = (Math.random() * quoteList.size())
-//        return quoteList.get(randValue)
-//    }
-//}//Storage
+class Storage(){
+    val quoteList = mutableListOf<String>("Начинать всегда стоит с того, что сеет сомнения. \n\nБорис Стругацкий.",
+        "Начинать всегда стоит с того, что сеет сомнения. \n\nБорис Стругацкий.",
+        "80% успеха - это появиться в нужном месте в нужное время.\n\nВуди Аллен",
+        "Мы должны признать очевидное: понимают лишь те,кто хочет понять.\n\nБернар Вербер")
+
+    fun getRandQuote(): ListOf{
+        val randValue = (Math.random() * quoteList.size)
+        val  out = quoteList.indexOf(randValue)
+        return quoteList.indexOf(randValue)
+    }
+}//Storage
 
 
 
 class Bot: TelegramLongPollingBot() {
 
-    //val storage = Storage()
+    val storage = Storage()
     // Имя бота которые получим при его создание
     override fun getBotToken() = "5119612006:AAFH8UCHd0N580nRx7mwYpUMHRkdTzUYtCI"
 
@@ -66,8 +65,8 @@ class Bot: TelegramLongPollingBot() {
         if(textMsg.equals("/start"))
             response = "Приветствую, бот знает много цитат. Жми /get, чтобы получить случайную из них";
         else if(textMsg.equals("/get")) // сдесь будет можно вставить строку для опоиска
-            //response = storage.getRandQuote()
-            response = "Команда распознано"
+            response = storage.getRandQuote()
+            //response = "Команда распознано"
         else
             response = "Команда не распознано"
 
