@@ -14,16 +14,9 @@ fun  main() {
 }
 
 class Storage(){
-    val quoteList = mutableListOf<String>("Начинать всегда стоит с того, что сеет сомнения. \n\nБорис Стругацкий.",
-        "Начинать всегда стоит с того, что сеет сомнения. \n\nБорис Стругацкий.",
-        "80% успеха - это появиться в нужном месте в нужное время.\n\nВуди Аллен",
-        "Мы должны признать очевидное: понимают лишь те,кто хочет понять.\n\nБернар Вербер")
 
-    fun getRandQuote(): ListOf{
-        val randValue = (Math.random() * quoteList.size)
-        val  out = quoteList.indexOf(randValue)
-        return quoteList.indexOf(randValue)
-    }
+
+
 }//Storage
 
 
@@ -57,7 +50,7 @@ class Bot: TelegramLongPollingBot() {
             } catch (e: TelegramApiException) {
                 e.printStackTrace()
             }
-        }
+        }//onUpdateReceived
     
     fun parseMessage (textMsg: String): String {
         val response: String
@@ -71,8 +64,17 @@ class Bot: TelegramLongPollingBot() {
             response = "Команда не распознано"
 
         return response;
-    }
+    }//parseMessage
 
+    fun getRandQuote(): ListOf{    
+        val quoteList = mutableListOf<String>("Начинать всегда стоит с того, что сеет сомнения. \n\nБорис Стругацкий.",
+            "Начинать всегда стоит с того, что сеет сомнения. \n\nБорис Стругацкий.",
+            "80% успеха - это появиться в нужном месте в нужное время.\n\nВуди Аллен",
+            "Мы должны признать очевидное: понимают лишь те,кто хочет понять.\n\nБернар Вербер")
+        val randValue = (Math.random() * quoteList.size)
+        val  outText = quoteList.indexOf(randValue)
+        return outText
+    }
 }//class Bot
 
 //https://github.com/rubenlagus/TelegramBots/wiki/Getting-Started
