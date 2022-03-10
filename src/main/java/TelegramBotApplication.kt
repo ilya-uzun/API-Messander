@@ -19,7 +19,7 @@ class Storage(){
         "80% успеха - это появиться в нужном месте в нужное время.\n\nВуди Аллен",
         "Мы должны признать очевидное: понимают лишь те,кто хочет понять.\n\nБернар Вербер")
 
-    fun getRandQuote(): ListOf<String>{
+    fun getRandQuote(): ListOf{
         val randValue = (Math.random() * quoteList.size)
         val  out = quoteList.indexOf(randValue)
         return quoteList.indexOf(randValue)
