@@ -42,7 +42,7 @@ class Bot: TelegramLongPollingBot() {
             response = storage.getRandQuote()
         //response = "Команда распознано"
         else
-            response = "Команда не распознано"
+            response = "Enter /start"
 
         return response;
     }//parseMessage
