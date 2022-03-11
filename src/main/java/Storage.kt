@@ -1,6 +1,8 @@
 import java.util.*
 // Содержание сообщения
 class Storage {
+    
+    val textPage = " "
     fun getRandQuote(): String{
         val quoteList = mutableListOf<String>("Начинать всегда стоит с того, что сеет сомнения. \n\nБорис Стругацкий.",
             "Начинать всегда стоит с того, что сеет сомнения. \n\nБорис Стругацкий.",
@@ -12,4 +14,6 @@ class Storage {
     }//getRandQuote
 
     fun IntRange.random() = Random().nextInt((endInclusive + 1) - start) +  start
+    
+    fun parsing()
 }
