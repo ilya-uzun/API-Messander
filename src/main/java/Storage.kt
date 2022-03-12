@@ -15,5 +15,5 @@ class Storage {
 
     fun IntRange.random() = Random().nextInt((endInclusive + 1) - start) +  start
     
-    fun parsing()
+
 }

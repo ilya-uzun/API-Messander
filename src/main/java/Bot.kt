@@ -47,5 +47,4 @@ class Bot: TelegramLongPollingBot() {
         return response;
     }//parseMessage
 
-
 }//class Bot
